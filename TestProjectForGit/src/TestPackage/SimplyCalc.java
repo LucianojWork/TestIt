@@ -6,18 +6,22 @@ public class SimplyCalc {
 		new SimplyCalc();
 
 	}
-	
+
 	public SimplyCalc() {
-		System.out.println("I add up two numbrs and the Result is: " + addUp(2, 3));
-		System.out.println("I subtract two numbrs and the Result is: " + subtract(2, 3));
+		Calculate addUp = (a, b) -> a + b;
+		Calculate subtract = (a, b) -> a - b;
+		Calculate multiply = (a, b) -> a * b;
+		Calculate divide = (a, b) -> {
+			if(b == 0)
+				return -1;
+			return a / b;
+		};
+		
+		System.out.println(multiply.function(5,6));
 	}
-	
-	private int addUp(int num1, int num2) {
-		return num1 + num2;
-	}
-	
-	private int subtract(int num1, int num2) {
-		return num1 - num2;
+
+	interface Calculate {
+		double function(double a, double b);
 	}
 
 }
