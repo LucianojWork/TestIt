@@ -16,8 +16,11 @@ public class SimplyCalc {
 				return -1;
 			return a / b;
 		};
-		
-		System.out.println(multiply.function(5,6));
+
+		System.out.println(addUp.function(7,3));
+		System.out.println(subtract.function(7,3));
+		System.out.println(multiply.function(7,3));
+		System.out.println(divide.function(7,3));
 	}
 
 	interface Calculate {
